@@ -2052,8 +2052,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       home: ButtonClass2(),
-
+      debugShowCheckedModeBanner: false,
+       // home: ButtonClass2(),
+          home: ButtonClass3(),
 
        // home:ButtonClass3() ,
 
