@@ -2041,6 +2041,7 @@ class _State extends State<> {
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:project_1/AddNumber.dart';
 import 'package:project_1/Button-class.dart';
 import 'package:project_1/Floating_Button.dart';
 void main(){
@@ -2054,10 +2055,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
        // home: ButtonClass2(),
-          home: ButtonClass3(),
+       //    home: ButtonClass3(),
 
        // home:ButtonClass3() ,
-
+home: Addnumber1(),
 
     );
   }
