@@ -8,7 +8,9 @@ class Addnumber1 extends StatelessWidget {
   TextEditingController n4Controller=TextEditingController();
   TextEditingController n5Controller=TextEditingController();
   TextEditingController n6Controller=TextEditingController();
-  @override
+  TextEditingController n7Controller=TextEditingController();
+  TextEditingController n8Controller=TextEditingController();
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body:Column(
@@ -16,55 +18,57 @@ class Addnumber1 extends StatelessWidget {
          Padding(
            padding: const EdgeInsets.all(8.0),
            child: Container(
-
-            decoration:BoxDecoration(border: Border.all(color: Colors.black),
+             height: 40,
+           decoration: BoxDecoration(
+             border: Border.all(color: Colors.black),
              borderRadius: BorderRadius.circular(10),
-              color: Colors.blue,
+             color: Colors.blueAccent,
+           ),
 
-            ),
+
 
                  child: Padding(
-
-
                    padding: const EdgeInsets.all(8.0),
                    child: TextFormField(
                      decoration:InputDecoration(
                                hintText: ('Enter Any Number'),
                               hintStyle: TextStyle(color: Colors.white),
 
-                       border: InputBorder.none ,
+                       border: InputBorder.none,
 
                      ),
-               controller: n1Controller,
-             //     obscureText: true,
-             // obscuringCharacter: ('*'),
+                                  controller: n1Controller,
+                                //     obscureText: true,
+                                // obscuringCharacter: ('*'),
 
                    ),
                  ),
-             
+
            ),
          ),
-
+SizedBox(height: 5,),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
+            height: 40,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(decoration: InputDecoration(
                 hintText: ('Enter 2nd Number'),
                 hintStyle: TextStyle(color: Colors.white),
 
-            border: InputBorder.none,
+                        border: InputBorder.none,
               ),
               // obscureText: true,
                 // obscuringCharacter: ('*'),
-                // controller: n2Controller,
+                controller: n2Controller,
 
               ),
             ),
 
-             decoration: BoxDecoration(border: Border.all(color: Colors.black),
-             borderRadius: BorderRadius.circular(10),color: Colors.yellow),
+            decoration: BoxDecoration(border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(10),color: Colors.blueAccent,
+            ),
           ),
         ),
 
@@ -88,39 +92,54 @@ class Addnumber1 extends StatelessWidget {
 
         ),
 
+SizedBox(height: 5,),
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Container(
+             height: 40,
+             child: Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: TextFormField(
+                 decoration: InputDecoration(
+                  hintStyle: TextStyle(color: Colors.white),
+                  hintText: ('Enter Any Number123....'),
+               border: InputBorder.none,
 
-         Container(
-           child: TextFormField(
-             decoration: InputDecoration(
-              hintStyle: TextStyle(color: Colors.white),
-              hintText: ('Enter Any Number123....'),
+                 ),
+               // obscureText: true,
+                 // obscuringCharacter: "1",
+                 controller: n3Controller,
 
-
+               ),
              ),
-           // obscureText: true,
-             // obscuringCharacter: "1",
-             // controller: n3Controller,
+             decoration: BoxDecoration(border: Border.all(color: Colors.black),
+                 borderRadius: BorderRadius.circular(10),color: Colors.yellow),
 
            ),
-           decoration: BoxDecoration(border: Border.all(color: Colors.black),
-           borderRadius: BorderRadius.circular(10),color: Colors.blueAccent),
-
          ),
-         SizedBox(height: 10,),
-         Container(
-           decoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
-           border: Border.all(color: Colors.black,),color: Colors.yellow,),
-           child: TextFormField(decoration: InputDecoration(
-           hintText: ('Enter 4th Number123...'),
-             hintStyle: TextStyle(color: Colors.white),
+       SizedBox(height: 5,),
+
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Container(
+             height: 40,
+             decoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
+             border: Border.all(color: Colors.black,),color: Colors.yellow,),
+             child: Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: TextFormField(decoration: InputDecoration(
+               hintText: ('Enter  Number123...'),
+                 hintStyle: TextStyle(color: Colors.white),
+                        border: InputBorder.none,
+               ),
+                 // obscureText: true,
+                 // obscuringCharacter: "1",
+                 controller: n4Controller,
+               ),
+             ),
+
 
            ),
-             // obscureText: true,
-             // obscuringCharacter: "1",
-             controller: n4Controller,
-           ),
-
-
          ),
 
          TextButton(child: Text('Subtact'),
@@ -141,15 +160,20 @@ print('Subtract:$sub');
  Padding(
    padding: const EdgeInsets.all(8.0),
    child: Container(
-     child: TextFormField(
-       decoration: InputDecoration(
-         hintText: ('Enter Anny Number'),
-         hintStyle: TextStyle(color: Colors.white),
-         suffix: Icon(Icons.calculate,color: Colors.black,),
+     height: 40,
+     child: Padding(
+       padding: const EdgeInsets.all(8.0),
+       child: TextFormField(
+         decoration: InputDecoration(
+           hintText: ('Enter Anny Number'),
+           hintStyle: TextStyle(color: Colors.white),
+           suffix: Icon(Icons.calculate,color: Colors.black,),
+         border: InputBorder.none,
+         ),
+         // obscureText: true,
+         // obscuringCharacter: '*',
+         controller: n5Controller,
        ),
-       // obscureText: true,
-       // obscuringCharacter: '*',
-       controller: n5Controller,
      ),
      decoration: BoxDecoration(border: Border.all(color: Colors.black),
      borderRadius: BorderRadius.circular(10),color: Colors.blueAccent),
@@ -158,23 +182,30 @@ print('Subtract:$sub');
  ),
 
 
+SizedBox(height: 5,),
+
+Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: Container(
+    height: 40,
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextFormField(decoration: InputDecoration(
+
+        hintText: ('Enter any Number'),
+        hintStyle: TextStyle(color: Colors.white),
+        border: InputBorder.none,
+      ),
+
+      controller: n6Controller,
+      ),
+    ),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+    border: Border.all(color: Colors.black),color: Colors.blueAccent),
 
 
-Container(
-  child: TextFormField(decoration: InputDecoration(
-
-    hintText: ('Enter any Number'),
-    hintStyle: TextStyle(color: Colors.white),
 
   ),
-
-  controller: n6Controller,
-  ),
-  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-  border: Border.all(color: Colors.black),color: Colors.blueAccent),
-
-
-
 ),
 
 
@@ -188,12 +219,72 @@ Container(
              print('Multiply:$Mult');
 
 
-
-
-
            },
          ),
+SizedBox(height: 5,),
+       Padding(
+         padding: const EdgeInsets.all(8.0),
+         child: Container(
+          height: 40,
+           child: Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: TextFormField(
+               decoration: InputDecoration(
 
+                 hintText: ('Enter Anny Number'),
+                 hintStyle: TextStyle(color: Colors.white),
+
+             border: InputBorder.none,
+               ),
+
+               controller: n7Controller,
+
+
+             ),
+           ),
+           decoration: BoxDecoration(border: Border.all(color: Colors.black),
+           borderRadius: BorderRadius.circular(10),
+             color: Colors.yellow,
+           ),
+
+         ),
+       ),
+
+
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Container(height: 40,
+             child: Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: TextFormField(
+
+                 decoration: InputDecoration(
+
+                   hintText: ('Enter Anny Number'),
+                   hintStyle: TextStyle(color: Colors.white),
+
+                border: InputBorder.none,
+                 ),
+               controller: n8Controller,
+               ),
+             ),
+             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+             border: Border.all(color: Colors.black),
+             color: Colors.yellow),
+
+           ),
+         ),
+
+         TextButton(child: Text('Devide'),
+         onPressed: (){
+           double a,b;
+        a=double.parse(n7Controller.text);
+         b=double.parse(n8Controller.text);
+           double devide=a/b;
+           print('Devide:$devide');
+
+         },
+         ),
 
 
        ],
