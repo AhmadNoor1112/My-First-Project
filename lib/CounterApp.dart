@@ -8,7 +8,7 @@ class Counterapp extends StatefulWidget {
 }
 class _CounterappState extends State<Counterapp> {
 
-  TextEditingController a1Controller=TextEditingController();
+
   double Count=0;
   @override
   Widget build(BuildContext context) {
@@ -47,8 +47,6 @@ class _CounterappState extends State<Counterapp> {
                  else
                    {
                     Count =0 ;
-
-
 
 
                    }
