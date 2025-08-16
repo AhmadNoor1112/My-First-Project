@@ -286,6 +286,16 @@ class _homeState extends State<home> {
                                      ,style:TextStyle(color: Colors.white,fontSize: 20,) ),
                   ),
 
+SizedBox(height: 20,),
+                  Text('Develop  by Ahmad Noor ',
+                  style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),
+                  ),
+                  Text('DAte :8/15/2025',style: TextStyle(color: Colors.yellow,fontWeight: FontWeight.bold,fontSize: 30),),
+                  SizedBox(height: 20,),
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Icon(Icons.book,color: Colors.yellow,),
+                  )
 
 
 

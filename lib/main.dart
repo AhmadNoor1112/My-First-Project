@@ -2045,6 +2045,7 @@ import 'package:project_1/AddNumber.dart';
 import 'package:project_1/Button-class.dart';
 import 'package:project_1/CounterApp.dart';
 import 'package:project_1/Floating_Button.dart';
+import 'package:project_1/GoldApp.dart';
 import 'package:project_1/HomeWork.dart';
 import 'package:project_1/Wapda.dart';
 void main(){
@@ -2064,8 +2065,8 @@ class MyApp extends StatelessWidget {
  //home: Addnumber1(),
       //home: Bill(),
     // home: Counterapp(),
-      home: home(),
-
+     // home: home(),
+  home: GoldApp(),
 
     );
   }
