@@ -16,6 +16,7 @@ class _GoldAppState extends State<GoldApp> {
   double GoldGrams=0;
   double  GramsPrice=0;
   double  GramTolaPrice=0;
+  double    GoldprGram=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +71,15 @@ SizedBox(height: 5,),
             ),
           ),
 SizedBox(height: 5,),
-        IconButton(onPressed: (){
+        FloatingActionButton(
+          backgroundColor: Colors.black,
+          child: Icon(Icons.add,size: 40,color: Colors.yellow,),
+          shape: CircleBorder(),
+          onPressed: (){
+            
+
+
+
 
           double CurrentTolaPrice,YourGold,oneTola,TotalG;
           CurrentTolaPrice=double.parse(a1Controller.text);
@@ -78,11 +87,19 @@ SizedBox(height: 5,),
           TotalG=double.parse(a3Controller.text);
 
 
+
+
+
+
+
+
           oneTola=12;
           GoldTotalPrice=CurrentTolaPrice*YourGold;
           GoldGrams=CurrentTolaPrice/oneTola;
           GramsPrice=TotalG*GoldGrams;
           GramTolaPrice=GramsPrice+GoldTotalPrice;
+            GoldprGram=TotalG*GoldGrams;
+
 
           print(' Gold price:$GoldTotalPrice');
           print(' Gold Price in Grams:$GramsPrice ');
@@ -93,7 +110,11 @@ SizedBox(height: 5,),
 
 
 
-        }, icon: Icon(Icons.add,color: Colors.black,size: 40,),),
+        },
+        
+        
+        
+        ),
 
 
 
@@ -115,7 +136,7 @@ SizedBox(height: 10,),
 
               height: 43,
               width: 200,
-              child: Center(child: Text('One Gram Price:$GoldGrams',style: TextStyle(color: Colors.white,),)),
+              child: Center(child: Center(child: Text('One Gram Price:$GoldGrams',style: TextStyle(color: Colors.white,),))),
             decoration: BoxDecoration(border: Border.all(color: Colors.black,),color: Colors.blue,borderRadius: BorderRadius.circular(10)),
             ),
            SizedBox(height: 10,),
@@ -144,6 +165,7 @@ SizedBox(height: 10,),
 
             ),
 
+            SizedBox(height: 10,),
 
 
 
