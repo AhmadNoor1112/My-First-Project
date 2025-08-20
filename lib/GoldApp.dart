@@ -9,9 +9,9 @@ class GoldApp extends StatefulWidget {
 }
 class _GoldAppState extends State<GoldApp> {
 
-  TextEditingController a1Controller=TextEditingController();
-  TextEditingController a2Controller=TextEditingController();
-  TextEditingController a3Controller=TextEditingController();
+  TextEditingController CurrentTolaPriceController=TextEditingController();
+  TextEditingController GoldQuantityController=TextEditingController();
+  TextEditingController GramQuantityController=TextEditingController();
   TextEditingController OneRattiController=TextEditingController();
   TextEditingController PointsController=TextEditingController();
   double GoldTotalPrice=0;
@@ -21,8 +21,9 @@ class _GoldAppState extends State<GoldApp> {
   double    GoldprGram=0;
     double RattiPrice=0;
     double PointPrice=0;
-    double  OneRatti=0;
-    double OnePoint=0;
+    //double  OneRatti=0;
+  //  double OnePoint=0;
+  String Error="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +45,7 @@ class _GoldAppState extends State<GoldApp> {
 
           border: InputBorder.none,
                   ),
-                  controller: a1Controller,
+                  controller: CurrentTolaPriceController,
 
                 ),
               ),
@@ -57,7 +58,7 @@ class _GoldAppState extends State<GoldApp> {
                 border: InputBorder.none,
                   ),
 
-                  controller: a2Controller,
+                  controller: GoldQuantityController,
 
                 ),
               ),
@@ -74,7 +75,7 @@ class _GoldAppState extends State<GoldApp> {
 
               border: InputBorder.none,
                 ),
-                controller: a3Controller,
+                controller: GramQuantityController,
               ),
             ),
 
@@ -117,11 +118,6 @@ class _GoldAppState extends State<GoldApp> {
 
 
 
-
-
-
-
-
               SizedBox(height: 5,),
 
           FloatingActionButton(
@@ -131,43 +127,73 @@ class _GoldAppState extends State<GoldApp> {
             onPressed: (){
 
           //1 Gram=8Ratti,1tola=12grams,so 1tola=96Ratti, and //
-          //one ratti =0.91 (1crrit)=91 points,
-            //one (1)tola =60crrit(58.3),1 tola =5830 points.
-              //1 tola =60x91->pionts in one tola;
+          //1tola=12 gram so 1gram=100 points ->1tola =1200 points ,totalprice *points quantity/1200
+              //1tola=96 ratti->tatalprice*rattiqunatity/96;
+
+ if(CurrentTolaPriceController.text=="" ){
+   Error='Must Enter Current Price of Gold';
+
+
+              setState(( ) {
+
+ });
+ }
+ else{
+   if(GramQuantityController.text==""){
+     GramQuantityController.text="0";
+   }
+if(GoldQuantityController.text==""){
+  GoldQuantityController.text="0";
+}
+if(OneRattiController.text==""){
+
+  OneRattiController.text="0";
+}
+if(
+PointsController.text==""
+){
+  PointsController.text="0";
+}
+
+ }
+
+
+
+
+
+
 
 
             double CurrentTolaPrice,YourGold,oneTola,TotalG,RattiQuantity,PointsQuantity;
-            CurrentTolaPrice=double.parse(a1Controller.text);
-            YourGold=double.parse(a2Controller.text);
-            TotalG=double.parse(a3Controller.text);
+            CurrentTolaPrice=double.parse(CurrentTolaPriceController.text);
+            YourGold=double.parse(GoldQuantityController.text);
+            TotalG=double.parse(GramQuantityController.text);
              RattiQuantity=double.parse(OneRattiController.text);
              PointsQuantity=double.parse(PointsController.text);
 
 
 
-
-
-
-            oneTola=12;
+           // oneTola=12;
             GoldTotalPrice=CurrentTolaPrice*YourGold;
-            GoldGrams=CurrentTolaPrice/oneTola;
-            GramsPrice=TotalG*GoldGrams;
+           // GoldGrams=CurrentTolaPrice/oneTola;
+            GramsPrice=(CurrentTolaPrice/12)*TotalG;
 
             GramTolaPrice=GramsPrice+GoldTotalPrice+RattiPrice+PointPrice;
-              GoldprGram=TotalG*GoldGrams;
+             // GoldprGram=TotalG*GoldGrams;
               //1ratti=8gram
             //12 gram=1toala ->1tola=12*8 ratti;
             //1rattipric=currenttolalprice/96;
 
-                 OneRatti =CurrentTolaPrice/96;
-              OnePoint=CurrentTolaPrice/1200;
-             RattiPrice=RattiQuantity*OneRatti;
-             PointPrice=RattiQuantity*OnePoint;
+                // OneRatti =CurrentTolaPrice/96;
+              //OnePoint=CurrentTolaPrice/1200;
+             RattiPrice=RattiQuantity*CurrentTolaPrice/96;
+             PointPrice=RattiQuantity*CurrentTolaPrice/1200;
 
 
 
             print(' Gold price:$GoldTotalPrice');
             print(' Gold Price in Grams:$GramsPrice ');
+
 
             setState(() {
 
@@ -195,15 +221,15 @@ class _GoldAppState extends State<GoldApp> {
 
               ),
 
-          SizedBox(height: 10,),
-
-              Container(
-
-                height: 43,
-                width: 200,
-                child: Center(child: Center(child: Text('One Gram Price:$GoldGrams',style: TextStyle(color: Colors.white,),))),
-              decoration: BoxDecoration(border: Border.all(color: Colors.black,),color: Colors.blue,borderRadius: BorderRadius.circular(10)),
-              ),
+          // SizedBox(height: 10,),
+          //
+          //     Container(
+          //
+          //       height: 43,
+          //       width: 200,
+          //       child: Center(child: Center(child: Text('One Gram Price:$GoldGrams',style: TextStyle(color: Colors.white,),))),
+          //     decoration: BoxDecoration(border: Border.all(color: Colors.black,),color: Colors.blue,borderRadius: BorderRadius.circular(10)),
+          //     ),
              SizedBox(height: 10,),
 
              Container(
@@ -217,45 +243,34 @@ class _GoldAppState extends State<GoldApp> {
 
              ),
 
-          SizedBox(height: 10,),
-
-              Container(
-                height: 43,
-                width: 200,
-                child: Center(
-                  child: Text('Total Gold Price $GramTolaPrice',style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
-
-              ),
-
-              SizedBox(height: 10,),
 
 
-              Container(
-                height: 43,
-                width: 200,
-                child: Center(
-                  child: Text('one  Ratti Price $OneRatti',style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
-
-              ),
-
-              SizedBox(height: 10,),
-
-              Container(
-                height: 43,
-                width: 200,
-                child: Center(
-                  child: Text('one point Price $OnePoint',style: TextStyle(color: Colors.white),
-                  ),
-                ),
-                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
-
-              ),
+              // SizedBox(height: 10,),
+              //
+              //
+              // Container(
+              //   height: 43,
+              //   width: 200,
+              //   child: Center(
+              //     child: Text('one  Ratti Price $OneRatti',style: TextStyle(color: Colors.white),
+              //     ),
+              //   ),
+              //   decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+              //
+              // ),
+              //
+              // SizedBox(height: 10,),
+              //
+              // Container(
+              //   height: 43,
+              //   width: 200,
+              //   child: Center(
+              //     child: Text('one point Price $OnePoint',style: TextStyle(color: Colors.white),
+              //     ),
+              //   ),
+              //   decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+              //
+              // ),
 
               SizedBox(height: 10,),
 
@@ -290,6 +305,18 @@ class _GoldAppState extends State<GoldApp> {
 
 
 
+              SizedBox(height: 10,),
+
+              Container(
+                height: 43,
+                width: 200,
+                child: Center(
+                  child: Text('Total Gold Price $GramTolaPrice',style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+
+              ),
 
 
 
@@ -303,11 +330,7 @@ class _GoldAppState extends State<GoldApp> {
 
 
 
-
-
-
-
-
+              Text('$Error',style: TextStyle(color: Colors.red,fontSize: 30),),
 
 
 
