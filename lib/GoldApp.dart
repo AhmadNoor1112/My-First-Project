@@ -27,15 +27,18 @@ class _GoldAppState extends State<GoldApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Gold Price Counter App',style: TextStyle(color: Colors.blue,fontSize: 30,fontWeight: FontWeight.bold),),),
+backgroundColor: Colors.black,
+      appBar: AppBar(backgroundColor: Colors.yellow,
+        title: Text('Gold Price Counter App',style: TextStyle(color: Colors.black,fontSize: 30,fontWeight: FontWeight.bold),),),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
 
         child:SingleChildScrollView(
+
           child: Column(
 
-            children: [
-              Container(decoration: BoxDecoration(border: Border.all(color: Colors.black),borderRadius: BorderRadius.circular(10),),
+            children: [SizedBox(height: 20,),
+              Container(decoration: BoxDecoration(border: Border.all(color: Colors.yellow),borderRadius: BorderRadius.circular(10),color: Colors.white),
 
                 child: TextFormField(
 
@@ -49,8 +52,8 @@ class _GoldAppState extends State<GoldApp> {
 
                 ),
               ),
-          SizedBox(height: 5,),
-              Container(decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),),
+          SizedBox(height: 10,),
+              Container(decoration: BoxDecoration(border: Border.all(color: Colors.yellowAccent,),borderRadius: BorderRadius.circular(10),color: Colors.white),
                 child: TextFormField(
                   decoration: InputDecoration(
                     hintText: ('Enter Your Gold Quantity'),
@@ -63,10 +66,10 @@ class _GoldAppState extends State<GoldApp> {
                 ),
               ),
 
-          SizedBox(height: 5,),
+          SizedBox(height: 10,),
 
             Container(
-             decoration: BoxDecoration(border: Border.all(color: Colors.black),borderRadius: BorderRadius.circular(10),),
+             decoration: BoxDecoration(border: Border.all(color: Colors.yellowAccent),borderRadius: BorderRadius.circular(10),color: Colors.white),
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Gold Quantity in Grams',
@@ -79,8 +82,8 @@ class _GoldAppState extends State<GoldApp> {
               ),
             ),
 
-              SizedBox(height: 5,),
-              Container(decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),),
+              SizedBox(height: 10,),
+              Container(decoration: BoxDecoration(border: Border.all(color: Colors.yellowAccent,),borderRadius: BorderRadius.circular(10),color: Colors.white),
                 child: TextFormField(
                   decoration: InputDecoration(
                     hintText: ('Enter Your Ratti Quantity'),
@@ -96,13 +99,15 @@ class _GoldAppState extends State<GoldApp> {
 
 
 
-              SizedBox(height: 5,),
-              Container(decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),),
+              SizedBox(height: 10,),
+              Container(decoration: BoxDecoration(border: Border.all(color: Colors.brown,),borderRadius: BorderRadius.circular(10),color: Colors.white),
                 child: TextFormField(
+
                   decoration: InputDecoration(
                     hintText: ('Enter Your Points Quantity'),
                     hintStyle: TextStyle(color: Colors.black),
                     border: InputBorder.none,
+
                   ),
 
                   controller: PointsController,
@@ -118,11 +123,11 @@ class _GoldAppState extends State<GoldApp> {
 
 
 
-              SizedBox(height: 5,),
+              SizedBox(height: 10,),
 
           FloatingActionButton(
-            backgroundColor: Colors.black,
-            child: Icon(Icons.add,size: 40,color: Colors.yellow,),
+            backgroundColor: Colors.yellowAccent,
+            child: Icon(Icons.add,size: 40,color: Colors.black,),
             shape: CircleBorder(),
             onPressed: (){
 
@@ -130,15 +135,25 @@ class _GoldAppState extends State<GoldApp> {
           //1tola=12 gram so 1gram=100 points ->1tola =1200 points ,totalprice *points quantity/1200
               //1tola=96 ratti->tatalprice*rattiqunatity/96;
 
+
+
  if(CurrentTolaPriceController.text=="" ){
+
+
+
    Error='Must Enter Current Price of Gold';
+   setState(( ) {
 
 
-              setState(( ) {
+   });
 
- });
+
  }
  else{
+Error="";
+
+
+
    if(GramQuantityController.text==""){
      GramQuantityController.text="0";
    }
@@ -156,8 +171,6 @@ PointsController.text==""
 }
 
  }
-
-
 
 
 
@@ -215,9 +228,9 @@ PointsController.text==""
                 height: 43,
                 width: 200,
 
-                child: Center(child: Text('  Gold Price(Tola):$GoldTotalPrice',style: TextStyle(color: Colors.white),)),
+                child: Center(child: Text('  Gold Price(Tola):$GoldTotalPrice',style: TextStyle(color: Colors.black),)),
 
-          decoration: BoxDecoration(border: Border.all(color: Colors.black),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+          decoration: BoxDecoration(border: Border.all(color: Colors.black),borderRadius: BorderRadius.circular(10),color: Colors.yellow),
 
               ),
 
@@ -236,10 +249,10 @@ PointsController.text==""
                height: 43,
                width: 200,
                child: Center(
-                 child: Text('Gold Price :(in Grams)$GramsPrice',style: TextStyle(color: Colors.white),
+                 child: Text('Gold Price :(in Grams)$GramsPrice',style: TextStyle(color: Colors.black),
                             ),
                ),
-             decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+             decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.yellow),
 
              ),
 
@@ -278,10 +291,10 @@ PointsController.text==""
                 height: 43,
                 width: 200,
                 child: Center(
-                  child: Text(' Ratti Price $RattiPrice',style: TextStyle(color: Colors.white),
+                  child: Text(' Ratti Price $RattiPrice',style: TextStyle(color: Colors.black),
                   ),
                 ),
-                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.yellow),
 
               ),
 
@@ -292,10 +305,10 @@ PointsController.text==""
                 height: 43,
                 width: 200,
                 child: Center(
-                  child: Text('Point Price $PointPrice',style: TextStyle(color: Colors.white),
+                  child: Text('Point Price $PointPrice',style: TextStyle(color: Colors.black),
                   ),
                 ),
-                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.yellow),
 
               ),
 
@@ -311,10 +324,10 @@ PointsController.text==""
                 height: 43,
                 width: 200,
                 child: Center(
-                  child: Text('Total Gold Price $GramTolaPrice',style: TextStyle(color: Colors.white),
+                  child: Text('Total Gold Price $GramTolaPrice',style: TextStyle(color: Colors.black),
                   ),
                 ),
-                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.blue),
+                decoration: BoxDecoration(border: Border.all(color: Colors.black,),borderRadius: BorderRadius.circular(10),color: Colors.yellow),
 
               ),
 
