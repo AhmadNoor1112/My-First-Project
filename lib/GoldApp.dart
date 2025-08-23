@@ -75,8 +75,9 @@ backgroundColor: Colors.black,
                 Container(  width:500,decoration: BoxDecoration(border: Border.all(color: Colors.yellowAccent,),borderRadius: BorderRadius.circular(10),color: Colors.white),
                   child: TextFormField(
                     decoration: InputDecoration(
+                        hintStyle: TextStyle(color: Colors.red),
                       hintText: ('Enter Your Gold Quantity'),
-                      hintStyle: TextStyle(color: Colors.black),
+
                   border: InputBorder.none,
                     ),
 
